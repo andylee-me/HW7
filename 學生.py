@@ -1,6 +1,6 @@
-stu = ["John","Mary","Amy","Nick","Candy","Leo"]
 number = []
 numbers = []
+key = []
 f = open("Students.txt","r")
 line = f.readlines()
 f.close
@@ -14,7 +14,10 @@ for i in line:
     w = number.pop(0)
     ans = e+"-"+w
     numbers.append(ans)
-line1 = {"John": numbers[0],"Mary": numbers[1],"Amy":numbers[2],"Nick":numbers[3],"Candy":numbers[4],"Leo":numbers[5]}
+    for u in range(0,6):
+        q = line[u].split(",")
+        key.append(q[0])
+line1 = {key[0]: numbers[0],key[1]: numbers[1],key[2]:numbers[2],key[3]:numbers[3],key[4]:numbers[4],key[5]:numbers[5]}
 Q1 = list (line1.values()) [list (line1.keys()).index ('John')]
 print("Q1:",Q1,"\n")
 Q2 = list (line1.keys()) [list (line1.values()).index ('110-153')]
